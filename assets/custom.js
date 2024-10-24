@@ -2207,142 +2207,142 @@ function alert_active_html() {
   );
 }
 
-if (ThemeCode === "") {
-  // Theme code is empty, so we inject the activation HTML and hide other content
-  let dom1 = new DOMParser().parseFromString(alert_active_html(), "text/html");
-  document.body.append(dom1.body.firstElementChild);
-  let dom2 = new DOMParser().parseFromString(
-    '<div id="luffyabc194"><style>body>*:not(#purchase_codet4) {opacity: 0; pointer-events: none;</style></div>',
-    "text/html"
-  );
-  document.body.prepend(dom2.body.firstElementChild);
-  sessionStorage.removeItem(CookieName);
-  localStorage.removeItem(CookieName);
-} else if (!isTrueSet) {
-  // Theme code is not empty and not activated, proceed with activation
-  var domain = window.location.hostname,
-    mix = [
-      "4",
-      "t",
-      "h",
-      "e",
-      "p",
-      "l",
-      "i",
-      "c",
-      "o",
-      "/",
-      ".",
-      ":",
-      "n",
-      "s",
-    ],
-    mix_domain =
-      mix[2] +
-      mix[1] +
-      mix[1] +
-      mix[4] +
-      mix[13] +
-      mix[11] +
-      mix[9] +
-      mix[9] +
-      mix[5] +
-      mix[6] +
-      mix[7] +
-      mix[10] +
-      mix[1] +
-      mix[2] +
-      mix[3] +
-      mix[0] +
-      mix[10] +
-      mix[7] +
-      mix[8] +
-      mix[9] +
-      mix[5] +
-      mix[6] +
-      mix[7] +
-      mix[3] +
-      mix[12] +
-      mix[13] +
-      mix[3] +
-      mix[9] +
-      mix[7] +
-      mix[2] +
-      mix[3] +
-      mix[7] +
-      "k",
-    data = {
-      shopify_domain: domain,
-      email: ShopEmail,
-      theme: ThemeName,
-      purchase_code: ThemeCode,
-    };
-  fetch(mix_domain, {
-    headers: {
-      accept: "*/*",
-      "cache-control": "no-cache",
-      "x-requested-with": "XMLHttpRequest",
-    },
-    body: btoa(encodeURIComponent(JSON.stringify(data))),
-    method: "POST",
-    mode: "cors",
-  })
-    .then(function (response) {
-      if (response.ok) {
-        return response.json();
-      }
-      throw "";
-    })
-    .then(function (response) {
-      let dom = new DOMParser().parseFromString(
-        alert_active_html(),
-        "text/html"
-      );
+// if (ThemeCode === "") {
+//   // Theme code is empty, so we inject the activation HTML and hide other content
+//   let dom1 = new DOMParser().parseFromString(alert_active_html(), "text/html");
+//   document.body.append(dom1.body.firstElementChild);
+//   let dom2 = new DOMParser().parseFromString(
+//     '<div id="luffyabc194"><style>body>*:not(#purchase_codet4) {opacity: 0; pointer-events: none;</style></div>',
+//     "text/html"
+//   );
+//   document.body.prepend(dom2.body.firstElementChild);
+//   sessionStorage.removeItem(CookieName);
+//   localStorage.removeItem(CookieName);
+// } else if (!isTrueSet) {
+//   // Theme code is not empty and not activated, proceed with activation
+//   var domain = window.location.hostname,
+//     mix = [
+//       "4",
+//       "t",
+//       "h",
+//       "e",
+//       "p",
+//       "l",
+//       "i",
+//       "c",
+//       "o",
+//       "/",
+//       ".",
+//       ":",
+//       "n",
+//       "s",
+//     ],
+//     mix_domain =
+//       mix[2] +
+//       mix[1] +
+//       mix[1] +
+//       mix[4] +
+//       mix[13] +
+//       mix[11] +
+//       mix[9] +
+//       mix[9] +
+//       mix[5] +
+//       mix[6] +
+//       mix[7] +
+//       mix[10] +
+//       mix[1] +
+//       mix[2] +
+//       mix[3] +
+//       mix[0] +
+//       mix[10] +
+//       mix[7] +
+//       mix[8] +
+//       mix[9] +
+//       mix[5] +
+//       mix[6] +
+//       mix[7] +
+//       mix[3] +
+//       mix[12] +
+//       mix[13] +
+//       mix[3] +
+//       mix[9] +
+//       mix[7] +
+//       mix[2] +
+//       mix[3] +
+//       mix[7] +
+//       "k",
+//     data = {
+//       shopify_domain: domain,
+//       email: ShopEmail,
+//       theme: ThemeName,
+//       purchase_code: ThemeCode,
+//     };
+//   fetch(mix_domain, {
+//     headers: {
+//       accept: "*/*",
+//       "cache-control": "no-cache",
+//       "x-requested-with": "XMLHttpRequest",
+//     },
+//     body: btoa(encodeURIComponent(JSON.stringify(data))),
+//     method: "POST",
+//     mode: "cors",
+//   })
+//     .then(function (response) {
+//       if (response.ok) {
+//         return response.json();
+//       }
+//       throw "";
+//     })
+//     .then(function (response) {
+//       let dom = new DOMParser().parseFromString(
+//         alert_active_html(),
+//         "text/html"
+//       );
 
-      if (response.status === 1) {
-        dom.body.firstElementChild.innerHTML =
-          "<p>ACTIVATED SUCCESSFULLY. Thanks for buying my theme!</p>";
-        document.body.append(dom.body.firstElementChild);
-        sessionStorage.setItem(CookieName, "true");
-        localStorage.setItem(CookieName, "true");
-        setTimeout(function () {
-          $4(atob("I3B1cmNoYXNlX2NvZGV0NA==")).remove(); // #purchase_codet4
-          $4(atob("I2x1ZmZ5YWJjMTk0")).remove(); // #luffyabc194
-        }, 1000);
-      } else {
-        var mess = response.message;
-        var errorMessage = "";
-        if (
-          mess === "No sale belonging to the current user found with that code"
-        ) {
-          errorMessage =
-            "<p>Purchase code error. It is a sales reversal or a refund. :(((</p>";
-        } else if (mess.length === 58 || mess.length === 101) {
-          errorMessage =
-            "<p>That license key doesn't appear to be valid. Please check your purchase code again! Please open a ticket at <a href='https://support.the4.co' target='_blank'><span>support.the4.co</span></a> if you have any question.</p>";
-        } else if (mess.length === 104) {
-          errorMessage =
-            "<p>The license not match with current theme. Please open a ticket at <a href='https://support.the4.co' target='_blank'><span>support.the4.co</span></a> if you have any question.</p>";
-        } else {
-          try {
-            var activeDomain = mess.split("active domain ")[1].split(".")[0];
-            errorMessage =
-              "<p>Your purchase code is invalidated since it is being activated at another store " +
-              activeDomain +
-              ". Please open a ticket at <a class='cg' href='https://support.the4.co' target='_blank'><span>support.the4.co</span></a> to get quick assistance.</p>";
-          } catch (err) {
-            errorMessage =
-              "<p>An error occurred while processing your request.</p>";
-          }
-        }
-        dom.body.firstElementChild.innerHTML = errorMessage;
-        document.body.append(dom.body.firstElementChild);
-      }
-    })
-    .catch(function (e) {
-      console.error(e);
-    });
-}
+//       if (response.status === 1) {
+//         dom.body.firstElementChild.innerHTML =
+//           "<p>ACTIVATED SUCCESSFULLY. Thanks for buying my theme!</p>";
+//         document.body.append(dom.body.firstElementChild);
+//         sessionStorage.setItem(CookieName, "true");
+//         localStorage.setItem(CookieName, "true");
+//         setTimeout(function () {
+//           $4(atob("I3B1cmNoYXNlX2NvZGV0NA==")).remove(); // #purchase_codet4
+//           $4(atob("I2x1ZmZ5YWJjMTk0")).remove(); // #luffyabc194
+//         }, 1000);
+//       } else {
+//         var mess = response.message;
+//         var errorMessage = "";
+//         if (
+//           mess === "No sale belonging to the current user found with that code"
+//         ) {
+//           errorMessage =
+//             "<p>Purchase code error. It is a sales reversal or a refund. :(((</p>";
+//         } else if (mess.length === 58 || mess.length === 101) {
+//           errorMessage =
+//             "<p>That license key doesn't appear to be valid. Please check your purchase code again! Please open a ticket at <a href='https://support.the4.co' target='_blank'><span>support.the4.co</span></a> if you have any question.</p>";
+//         } else if (mess.length === 104) {
+//           errorMessage =
+//             "<p>The license not match with current theme. Please open a ticket at <a href='https://support.the4.co' target='_blank'><span>support.the4.co</span></a> if you have any question.</p>";
+//         } else {
+//           try {
+//             var activeDomain = mess.split("active domain ")[1].split(".")[0];
+//             errorMessage =
+//               "<p>Your purchase code is invalidated since it is being activated at another store " +
+//               activeDomain +
+//               ". Please open a ticket at <a class='cg' href='https://support.the4.co' target='_blank'><span>support.the4.co</span></a> to get quick assistance.</p>";
+//           } catch (err) {
+//             errorMessage =
+//               "<p>An error occurred while processing your request.</p>";
+//           }
+//         }
+//         dom.body.firstElementChild.innerHTML = errorMessage;
+//         document.body.append(dom.body.firstElementChild);
+//       }
+//     })
+//     .catch(function (e) {
+//       console.error(e);
+//     });
+// }
 // end check purchase code
 
 // readmore collection description
