@@ -1,6 +1,15 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "purchase_code": "",
+    "purchase_code": "asd123",
     "color_scheme_dialog": "scheme-1",
     "color_accent": "#db1215",
     "color_focus": "#d53a3d",
@@ -12,7 +21,7 @@
     "library_font": "google",
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
-    "embed_custom_font": "<link rel=\"preconnect\" href=\"https:\/\/fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https:\/\/fonts.gstatic.com\" crossorigin>\n<link href=\"https:\/\/fonts.googleapis.com\/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap\" rel=\"stylesheet\">",
+    "embed_custom_font": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap\" rel=\"stylesheet\">",
     "font_custom_heading": "'Albert Sans', sans-serif",
     "font_custom_body": "'Albert Sans', sans-serif",
     "heading_scale": 100,
@@ -36,17 +45,17 @@
     "effect_secondary_image": "zoom",
     "color_event": "hover",
     "remove_collection_url": true,
-    "empty_cart_link": "shopify:\/\/collections\/all",
+    "empty_cart_link": "shopify://collections/all",
     "free_ship_pr": "cotton-jersey-top",
     "gift_wrap_pr": "gift-wrap",
     "animations_reveal_on_scroll": true,
     "animations_hover_elements": "light_skew",
-    "social_facebook_link": "https:\/\/facebook.com\/shopify",
-    "social_twitter_link": "https:\/\/twitter.com\/shopify",
-    "social_instagram_link": "https:\/\/www.instagram.com\/",
+    "social_facebook_link": "https://facebook.com/shopify",
+    "social_twitter_link": "https://twitter.com/shopify",
+    "social_instagram_link": "https://www.instagram.com/",
     "social_youtube_link": "",
-    "social_tiktok_link": "https:\/\/tiktok.com\/@shopify",
-    "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
+    "social_tiktok_link": "https://tiktok.com/@shopify",
+    "social_pinterest_link": "https://pinterest.com/shopify",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "social_snapchat_link": "",
@@ -64,7 +73,7 @@
     ],
     "currency_code_enabled": false,
     "auto_currency": false,
-    "favicon": "shopify:\/\/shop_images\/Favicon.png",
+    "favicon": "shopify://shop_images/Favicon.png",
     "enable_compare": true,
     "only_search_prs": false,
     "body_scale": 100,
@@ -155,7 +164,7 @@
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
     "brand_headline": "",
-    "brand_description": "<p><\/p>",
+    "brand_description": "<p></p>",
     "brand_image_width": 100,
     "cart_type": "notification",
     "show_vendor": false,
@@ -190,7 +199,7 @@
           "ae2f8f42-c195-4bd9-99c3-d52095ce0902"
         ],
         "settings": {
-          "image": "shopify:\/\/shop_images\/Mask_group_5.png",
+          "image": "shopify://shop_images/Mask_group_5.png",
           "color_scheme": "scheme-2",
           "spacing_hd": 5,
           "padding_top": 69,
@@ -200,7 +209,7 @@
       "main-password-header": {
         "type": "main-password-header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/logo-black.svg",
+          "logo": "shopify://shop_images/logo-black.svg",
           "logo_width": 100,
           "color_scheme": ""
         }
