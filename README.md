@@ -1,2 +1,1 @@
 # maxsale
- Shopify Theme
